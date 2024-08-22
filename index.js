@@ -43,7 +43,7 @@ app.get("/haveYeetard/:address", async (req, res) => {
   try {
     const haveNFT = await getYeetard(address);
     console.log(haveNFT);
-    if (haveNFT >= 4) {
+    if (haveNFT >= 0) {
       res.status(200).json({
         status: "OK",
         address: address,
