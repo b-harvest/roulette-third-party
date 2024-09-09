@@ -71,6 +71,9 @@ app.post("/winning", async (req, res) => {
 
   try {
     const isWinning = await sendingBera(address, amount);
+	if (isWinning === undefined) {
+		return res.status(400).send("insufficient balance");
+	}
     res.status(200).json({
       status: "OK",
       address: address,
